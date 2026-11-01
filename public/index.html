@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Student Management System</h1>
+      <p>Add, view, update and delete student records.</p>
+    </header>
+
+    <section class="panel">
+      <h2 id="form-title">Add Student</h2>
+      <form id="student-form">
+        <input type="hidden" id="student-id">
+        <div class="form-grid">
+          <label>Student Name
+            <input id="name" type="text" placeholder="Enter student name" required>
+          </label>
+          <label>Email
+            <input id="email" type="email" placeholder="Enter email address" required>
+          </label>
+          <label>Course
+            <input id="course" type="text" placeholder="Enter course" required>
+          </label>
+          <label>Age
+            <input id="age" type="number" min="1" max="120" placeholder="Enter age" required>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" id="submit-button">Add Student</button>
+          <button type="button" id="cancel-button" class="secondary" hidden>Cancel Edit</button>
+        </div>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="panel">
+      <div class="table-heading">
+        <h2>Student Records</h2>
+        <span id="student-count">0 students</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Email</th><th>Course</th><th>Age</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="student-list">
+            <tr><td colspan="6" class="empty">No students added yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
